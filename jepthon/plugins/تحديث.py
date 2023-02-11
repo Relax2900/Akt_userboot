@@ -65,7 +65,7 @@ async def gen_chlog(repo, diff):
 
 async def print_changelogs(event, ac_br, changelog):
     changelog_str = (
-        f"**᯽︙ قام مطورين السورس بتحديث الجوكر**\n᯽︙ **التـغييرات\n** {changelog}"
+        f"**᯽︙ قام مطورين السورس بتحديث أكثون**\n᯽︙ **التـغييرات\n** {changelog}"
     )
     if len(changelog_str) > 4096:
         await event.edit("`Changelog is too big, view the file to see it.`")
@@ -107,7 +107,7 @@ async def update(event, repo, ups_rem, ac_br):
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
     jasme = await event.edit(
-        "** ᯽︙ تم تحديث سورس الجوكر بنجاح انتظر قليلا سوف نخبرك بعد اعادة التشغيل !**"
+        "** ᯽︙ تم تحديث سورس اكثون بنجاح انتظر قليلا سوف نخبرك بعد اعادة التشغيل !**"
     )
     await event.client.reload(jasme)
 
@@ -133,7 +133,7 @@ async def update(event, repo, ups_rem, ac_br):
 async def upstream(event):
     "To check if the bot is up to date and update if specified"
     conf = event.pattern_match.group(1).strip()
-    event = await edit_or_reply(event, "**᯽︙ يـتـم البـحـث عـن تـحديثـات سـورس الجوكر انـتـظـر**")
+    event = await edit_or_reply(event, "**᯽︙ يـتـم البـحـث عـن تـحديثـات سـورس أكثون انـتـظـر**")
     off_repo = UPSTREAM_REPO_URL
     force_update = False
     
@@ -197,6 +197,6 @@ async def upstream(event):
             "`Force-Syncing to latest stable userbot code, please wait...`"
         )
     if conf == "الان":
-        await event.edit("** ᯽︙ جار تحـديـث سـورس الجوكر انـتـظـر قـليـلا 🔨**")
+        await event.edit("** ᯽︙ جار تحـديـث سـورس أكثون انـتـظـر قـليـلا 🔨**")
         await update(event, repo, ups_rem, ac_br)
     return
