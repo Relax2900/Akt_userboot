@@ -60,7 +60,7 @@ async def digitalpicloop():
     i = 0
     while DIGITALPICSTART:
         if not os.path.exists(digitalpic_path):
-            digitalpfp = gvarstatus("DIGITAL_PIC") or "https://telegra.ph/file/63a826d5e5f0003e006a0.jpg"
+            digitalpfp = gvarstatus("DIGITAL_PIC") or "https://telegra.ph/file/c1849e51f4b591f84d422.jpg"
             downloader = SmartDL(digitalpfp, digitalpic_path, progress_bar=False)
             downloader.start(blocking=False)
             while not downloader.isFinished():
@@ -140,7 +140,7 @@ async def autobio_loop():
 @jepiq.on(admin_cmd(pattern=f"{phow8t}(?:\s|$)([\s\S]*)"))
 async def _(event):
     "To set random colour pic with time to profile pic"
-    digitalpfp = gvarstatus("DIGITAL_PIC") or "https://telegra.ph/file/63a826d5e5f0003e006a0.jpg"
+    digitalpfp = gvarstatus("DIGITAL_PIC") or "https://telegra.ph/file/c1849e51f4b591f84d422.jpg"
     downloader = SmartDL(digitalpfp, digitalpic_path, progress_bar=False)
     downloader.start(blocking=False)
     while not downloader.isFinished():
